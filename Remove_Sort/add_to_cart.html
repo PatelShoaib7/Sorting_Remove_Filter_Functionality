@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container > div > div {
+            display: grid;
+            grid-template-columns: repeat(3,3fr);
+            grid-template-rows:500px;
+          
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Add_To_Cart</h1>
+    <div id="container">
+        <div id="main">
+        <div id="div"></div>
+    </div>
+      
+
+    </div>
+    
+</body>
+</html>
+  <script src="/data.js"></script>
+<script>
+
+
+
+living.map(function(elem,index,array){
+
+
+    let container = document.querySelector("#container")
+    
+    let div = document.getElementById("div")
+
+
+    let img = document.createElement("img")
+        img.setAttribute("src",elem.img)
+        img.style.width="300px";
+        img.style.height="300px";
+        
+    let name = document.createElement("h4")
+       name.innerText=elem.name;
+
+    let price = document.createElement("p")
+       price.innerText=elem.price;
+
+   div.append(img,name,price)
+   
+   let main = document.querySelector("#main")
+    main.append(div);
+
+     
+    container.append(main)
+    
+
+
+})
+
+
+
+
+</script>
